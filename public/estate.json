@@ -1,0 +1,155 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Luxurious Beachfront Villa",
+        "segment_name": "Luxury",
+        "description": "Exquisite villa steps away from the white sandy beaches, offering unparalleled elegance and comfort.",
+        "price": "$5,000,000",
+        "status": "sale",
+        "area": "6,000 sq ft",
+        "location": "Maui, Hawaii",
+        "facilities": [
+            "Oceanfront deck",
+            "Infinity pool",
+            "Gourmet kitchen"
+        ],
+        "image": "beachfront_villa.jpg",
+        "view_property_url": "https://example.com/beachfront_villa"
+    },
+    {
+        "id": 2,
+        "estate_title": "Private Island Retreat",
+        "segment_name": "Luxury",
+        "description": "Escape to your own private island paradise, featuring a stunning villa, pristine beaches, and unparalleled privacy.",
+        "price": "$20,000,000",
+        "status": "sale",
+        "area": "50 acres",
+        "location": "Fiji",
+        "facilities": [
+            "Spa",
+            "Helipad",
+            "Tennis court"
+        ],
+        "image": "private_island_retreat.jpg",
+        "view_property_url": "https://example.com/private_island_retreat"
+    },
+    {
+        "id": 3,
+        "estate_title": "Oceanfront Mansion",
+        "segment_name": "Luxury",
+        "description": "Magnificent mansion with breathtaking ocean views, featuring 7 bedrooms, private beach access, and luxurious amenities throughout.",
+        "price": "$10,000,000",
+        "status": "sale",
+        "area": "10,000 sq ft",
+        "location": "Malibu, California",
+        "facilities": [
+            "Infinity pool",
+            "Home theater",
+            "Gym"
+        ],
+        "image": "oceanfront_mansion.jpg",
+        "view_property_url": "https://example.com/oceanfront_mansion"
+    },
+    {
+        "id": 4,
+        "estate_title": "Exclusive Penthouse",
+        "segment_name": "Luxury",
+        "description": "Spectacular penthouse offering panoramic city skyline views, luxurious finishes, and unparalleled sophistication.",
+        "price": "$3,500,000",
+        "status": "sale",
+        "area": "3,000 sq ft",
+        "location": "New York City, New York",
+        "facilities": [
+            "Private terrace",
+            "Concierge service",
+            "Fitness center"
+        ],
+        "image": "penthouse.jpg",
+        "view_property_url": "https://example.com/penthouse"
+    },
+    {
+        "id": 5,
+        "estate_title": "Seaside Resort",
+        "segment_name": "Luxury",
+        "description": "Luxury resort nestled along the coast, offering world-class amenities, fine dining, and stunning ocean views.",
+        "price": "$15,000,000",
+        "status": "sale",
+        "area": "20 acres",
+        "location": "French Riviera, France",
+        "facilities": [
+            "Private beach",
+            "Spa",
+            "Tennis courts"
+        ],
+        "image": "seaside_resort.jpg",
+        "view_property_url": "https://example.com/seaside_resort"
+    },
+    {
+        "id": 6,
+        "estate_title": "Modern Mountain Retreat",
+        "segment_name": "Luxury",
+        "description": "Architectural masterpiece nestled in the mountains, featuring sleek design, panoramic views, and state-of-the-art amenities.",
+        "price": "$8,500,000",
+        "status": "sale",
+        "area": "5,000 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": [
+            "Ski-in/ski-out access",
+            "Outdoor hot tub",
+            "Home automation system"
+        ],
+        "image": "mountain_retreat.jpg",
+        "view_property_url": "https://example.com/mountain_retreat"
+    },
+    {
+        "id": 7,
+        "estate_title": "Exquisite Vineyard Estate",
+        "segment_name": "Luxury",
+        "description": "Stunning estate nestled in a prestigious wine region, featuring a vineyard, wine cellar, and luxurious living spaces.",
+        "price": "$12,000,000",
+        "status": "sale",
+        "area": "15 acres",
+        "location": "Napa Valley, California",
+        "facilities": [
+            "Wine tasting room",
+            "Outdoor kitchen",
+            "Guest house"
+        ],
+        "image": "vineyard_estate.jpg",
+        "view_property_url": "https://example.com/vineyard_estate"
+    },
+    {
+        "id": 8,
+        "estate_title": "Luxury Ski Chalet",
+        "segment_name": "Luxury",
+        "description": "Elegant ski chalet in an exclusive alpine resort, offering ski-in/ski-out access, luxurious amenities, and breathtaking mountain views.",
+        "price": "$6,500,000",
+        "status": "sale",
+        "area": "4,000 sq ft",
+        "location": "Courchevel, France",
+        "facilities": [
+            "Sauna",
+            "Private chef",
+            "Media room"
+        ],
+        "image": "ski_chalet.jpg",
+        "view_property_url": "https://example.com/ski_chalet"
+    },
+    {
+        "id": 9,
+        "estate_title": "Historic Castle",
+        "segment_name": "Luxury",
+        "description": "Magnificent castle steeped in history and grandeur, featuring opulent interiors, sprawling grounds, and breathtaking views.",
+        "price": "$25,000,000",
+        "status": "sale",
+        "area": "30,000 sq ft",
+        "location": "Loire Valley, France",
+        "facilities": [
+            "Ballroom",
+            "Chapel",
+            "Helipad"
+        ],
+        "image": "historic_castle.jpg",
+        "view_property_url": "https://example.com/historic_castle"
+    }
+]
