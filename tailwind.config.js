@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         montserrat: "'Montserrat', sans-serif",
         bebasNeue: "'Bebas Neue', sans-serif",
-        workSans: "'Work Sans', sans-serif"
+        workSans: "'Work Sans', sans-serif",
+        poppins: "'Poppins', sans-serif"
       }
     },
   },
