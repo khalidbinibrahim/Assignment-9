@@ -12,7 +12,7 @@ const Header = () => {
                 <div className="flex justify-between">
                     <div>
                         <h1 className="font-bebasNeue mb-5 text-6xl font-bold text-white">LUXURY ESTATE</h1>
-                        <p className="font-poppins text-white font-medium mb-6">Welcome to our Luxury Real Estate, your gateway to luxury living. Discover <br /> exclusive properties that redefine opulence and sophistication. Explore our curated <br /> selection of estates, villas, and penthouses in the world most prestigious <br /> destinations. Find your dream home with us today.</p>
+                        <p className="font-bebasNeue text-white font-medium mb-6">Welcome to our Luxury Real Estate, your gateway to luxury living. Discover <br /> exclusive properties that redefine opulence and sophistication. Explore our curated <br /> selection of estates, villas, and penthouses in the world most prestigious <br /> destinations. Find your dream home with us today.</p>
                         <a className="btn bg-[#FBB804] text-black font-semibold px-7 text-center border-none">Booking <i className="text-lg"><FaArrowRightLong /></i></a>
                     </div>
 
