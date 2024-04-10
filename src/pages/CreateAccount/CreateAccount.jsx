@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { NavLink } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Helmet } from 'react-helmet-async';
 
 const CreateAccount = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -11,6 +12,9 @@ const CreateAccount = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Luxury | Create Account</title>
+            </Helmet>
             <div className='mx-8 lg:mx-96 my-10 px-14 py-6 border rounded-md border-gray-400'>
                 <h1 className='mb-6 font-bold text-black text-2xl'>Create an Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
