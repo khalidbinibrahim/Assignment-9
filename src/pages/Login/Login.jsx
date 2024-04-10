@@ -32,7 +32,7 @@ const Login = () => {
                             <input type="checkbox" placeholder="Remember Me" {...register} />
                             <p className='text-black font-medium'>Remember Me</p>
                         </div>
-                        <p className="text-[#FBB804] border-b border-[#FBB804] font-medium">Forgot Password</p>
+                        <a className="text-[#FBB804] border-b border-[#FBB804] font-medium">Forgot Password</a>
                     </div>
 
                     <div className='my-4'>

@@ -4,14 +4,38 @@ import { NavLink } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const CreateAccount = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const { register, handleSubmit, formState: { errors }, getValues, reset } = useForm();
+    
+    const onSubmit = data => {
+        const { password, confirmPassword } = data;
+        if (password !== confirmPassword) {
+            toast.error("Password and Confirm Password do not match");
+        }
+        
+        setTimeout(() => {
+            toast.success("Account created successfully!");
+        }, 1000);
+    };
+
+    const handleCreateAccountClick = () => {
+        const formData = getValues();
+        const { password, confirmPassword } = formData;
+        if (password !== confirmPassword) {
+            toast.error("Password and Confirm Password do not match");
+            return;
+        }
+        console.log(formData);
+    };
+
 
     return (
         <div>
+            <ToastContainer />
             <Helmet>
                 <title>Luxury | Create Account</title>
             </Helmet>
@@ -19,27 +43,27 @@ const CreateAccount = () => {
                 <h1 className='mb-6 font-bold text-black text-2xl'>Create an Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-3'>
-                        <TextField id="standard-basic" label="First Name" variant="standard" className='w-full' type="text" {...register("First Name", { required: true })} />
+                        <TextField id="standard-basic" label="First Name" variant="standard" className='w-full' type="text" {...register("firstName", { required: true })} />
                     </div>
 
                     <div className='mb-3'>
-                        <TextField id="standard-basic" label="Last Name" variant="standard" className='w-full' type="text" {...register("Last Name", { required: true })} />
+                        <TextField id="standard-basic" label="Last Name" variant="standard" className='w-full' type="text" {...register("lastName", { required: true })} />
                     </div>
 
                     <div className='mb-3'>
-                        <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("Email", { required: true })} />
+                        <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("email", { required: true })} />
                     </div>
 
                     <div className='mb-3'>
-                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type="password" {...register("Password", { required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/i })} />
+                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type="password" {...register("password", { required: true })} />
                     </div>
 
                     <div className='mb-6'>
-                        <TextField id="standard-basic" label="Confirm Password" variant="standard" className='w-full' type="password" {...register("Confirm Password", { required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/i })} />
+                        <TextField id="standard-basic" label="Confirm Password" variant="standard" className='w-full' type="password" {...register("confirmPassword", { required: true })} />
                     </div>
 
                     <div className='my-4'>
-                        <a className="btn w-full bg-[#FBB804] text-black font-semibold px-7 text-center rounded-md border-none">Create an account</a>
+                        <button type="button" className="btn w-full bg-[#FBB804] text-black font-semibold px-7 text-center rounded-md border-none" onClick={handleCreateAccountClick}>Create an account</button>
                     </div>
                 </form>
                 <p className='text-black font-medium text-center'>Already have an account? <NavLink to="/login" className="text-[#FBB804] border-b border-[#FBB804]">Login</NavLink></p>
