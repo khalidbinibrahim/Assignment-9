@@ -19,11 +19,11 @@ const Login = () => {
             <div className='mx-8 lg:mx-96 my-10 px-14 py-6 border rounded-md border-gray-400'>
                 <h1 className='mb-6 font-bold text-black text-2xl'>Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className='mb-3'>
+                    <div className='mb-4'>
                         <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("Email", { required: true })} />
                     </div>
 
-                    <div className='mb-4'>
+                    <div className='mb-6'>
                         <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type="password" {...register("Password", { required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/i })} />
                     </div>
 
