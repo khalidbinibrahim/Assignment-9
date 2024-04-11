@@ -5,15 +5,15 @@ import { IoSearchOutline } from "react-icons/io5";
 const Navigation = () => {
 
     const navLinks = <>
-        <NavLink to="/" className="mr-3 font-medium text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Home</NavLink>
-        <NavLink to="/news" className="mr-3 font-medium text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">News</NavLink>
-        <NavLink to="/destination" className="mr-3 font-medium text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Destination</NavLink>
-        <NavLink to="/blog" className="mr-3 font-medium text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Blog</NavLink>
-        <NavLink to="/contact" className="mr-3 font-medium text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Contact</NavLink>
+        <NavLink to="/" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Home</NavLink>
+        <NavLink to="/news" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">News</NavLink>
+        <NavLink to="/destination" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Destination</NavLink>
+        <NavLink to="/blog" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Blog</NavLink>
+        <NavLink to="/contact" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Contact</NavLink>
     </>
 
     return (
-        <div className="navbar px-32 py-12">
+        <div className="navbar font-montserrat px-32 py-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,7 +43,7 @@ const Navigation = () => {
                 </ul>
             </div>
             <div className="">
-                <NavLink to="/login" className="btn bg-[#FBB804] text-black font-semibold px-7">Login</NavLink>
+                <NavLink to="/login" className="btn bg-[#FBB804] text-black font-bold px-7">Login</NavLink>
             </div>
         </div>
     );

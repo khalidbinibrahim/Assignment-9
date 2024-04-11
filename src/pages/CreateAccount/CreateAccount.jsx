@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CreateAccount = () => {
-    const { register, handleSubmit, formState: { errors }, getValues } = useForm();
+    const { register, handleSubmit, getValues, reset } = useForm();
 
     const onSubmit = data => {
         const { password, confirmPassword } = data;
@@ -39,7 +39,14 @@ const CreateAccount = () => {
         }
 
         console.log(formData);
+        const firstName = formData.firstName;
+        const lastName = formData.lastName;
+        const email = formData.email;
+        const PhotoUrl = formData.PhotoUrl;
+        console.log(firstName, lastName, email, PhotoUrl);
+
         toast.success("Account created successfully");
+        reset();
     };
 
     const checkPasswordCriteria = password => {
@@ -52,7 +59,7 @@ const CreateAccount = () => {
             <Helmet>
                 <title>Luxury | Create Account</title>
             </Helmet>
-            <div className='mx-8 lg:mx-96 my-10 px-14 py-6 border rounded-md border-gray-400'>
+            <div className='mx-8 lg:mx-96 my-10 px-14 py-8 border rounded-md border-gray-400 font-montserrat'>
                 <h1 className='mb-6 font-bold text-black text-2xl'>Create an Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-4'>
@@ -79,19 +86,19 @@ const CreateAccount = () => {
                     </div>
 
                     <div className='my-4'>
-                        <button type="submit" className="btn w-full bg-[#FBB804] text-black font-semibold px-7 text-center rounded-md border-none" onClick={handleCreateAccount}>Create an account</button>
+                        <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleCreateAccount}>Create an account</button>
                     </div>
                 </form>
-                <p className='text-black font-medium text-center'>Already have an account? <NavLink to="/login" className="text-[#FBB804] border-b border-[#FBB804]">Login</NavLink></p>
+                <p className='text-black font-bold text-center'>Already have an account? <NavLink to="/login" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Login</NavLink></p>
             </div>
 
-            <div className='mb-6'>
-                <p className='text-black text-center font-medium'>Or</p>
+            <div className='mb-6 font-montserrat'>
+                <p className='text-black text-center font-bold'>Or</p>
             </div>
 
-            <div className='flex flex-col items-center justify-center gap-4'>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-medium w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-medium w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
+            <div className='flex flex-col items-center justify-center gap-4 font-montserrat'>
+                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
+                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
             </div>
         </div>
     );

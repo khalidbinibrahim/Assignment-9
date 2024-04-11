@@ -16,7 +16,7 @@ const Login = () => {
             <Helmet>
                 <title>Luxury | Login</title>
             </Helmet>
-            <div className='mx-8 lg:mx-96 my-10 px-14 py-6 border rounded-md border-gray-400'>
+            <div className='mx-8 lg:mx-96 my-10 px-14 py-8 border rounded-md border-gray-400 font-montserrat'>
                 <h1 className='mb-6 font-bold text-black text-2xl'>Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='mb-4'>
@@ -30,25 +30,25 @@ const Login = () => {
                     <div className='flex justify-between my-6'>
                         <div className='flex gap-2'>
                             <input type="checkbox" placeholder="Remember Me" {...register} />
-                            <p className='text-black font-medium'>Remember Me</p>
+                            <p className='text-black font-bold'>Remember Me</p>
                         </div>
-                        <a className="text-[#FBB804] border-b border-[#FBB804] font-medium">Forgot Password</a>
+                        <a className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Forgot Password</a>
                     </div>
 
                     <div className='my-4'>
-                        <a className="btn w-full bg-[#FBB804] text-black font-semibold px-7 text-center rounded-md border-none">Login</a>
+                        <a className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none">Login</a>
                     </div>
                 </form>
-                <p className='text-black font-medium text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] border-b border-[#FBB804]">Create an account</NavLink></p>
+                <p className='text-black font-bold text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Create an account</NavLink></p>
             </div>
 
-            <div className='mb-6'>
-                <p className='text-black text-center font-medium'>Or</p>
+            <div className='mb-6 font-montserrat'>
+                <p className='text-black text-center font-bold'>Or</p>
             </div>
 
-            <div className='flex flex-col items-center justify-center gap-4'>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-medium w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-medium w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
+            <div className='flex flex-col items-center justify-center gap-4 font-montserrat'>
+                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
+                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
             </div>
         </div>
     );
