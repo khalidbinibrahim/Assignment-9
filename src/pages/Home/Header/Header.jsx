@@ -4,8 +4,13 @@ import { Autoplay, Parallax, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/bundle';
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
+    const {value} = useContext(AuthContext);
+
+    console.log(value)
     return (
         <div>
             <div className="bg-[url('https://saterdesign.com/cdn/shop/articles/y184DIXjxsSf2uv8uUODDQ0EslbkfRc41661192200_894x.jpg?v=1663357268')] bg-no-repeat bg-cover px-32 py-12 mb-12">
