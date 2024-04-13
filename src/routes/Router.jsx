@@ -8,6 +8,7 @@ import News from "../pages/News/News";
 import Destination from "../pages/Destination/Destination";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
+import EstateDetails from "../pages/Home/RealEstates/EstateDetails";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact />
+            },
+
+            {
+                path: '/estate/:id',
+                element: <EstateDetails />
             }
         ]
     }    

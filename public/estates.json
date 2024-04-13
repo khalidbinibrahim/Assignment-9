@@ -13,7 +13,7 @@
             "Infinity pool",
             "Gourmet kitchen"
         ],
-        "image": "beachfront_villa.jpg",
+        "image": "https://images.unsplash.com/photo-1622396090075-ab6b8396fe9b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/beachfront_villa"
     },
     {
@@ -30,7 +30,7 @@
             "Helipad",
             "Tennis court"
         ],
-        "image": "private_island_retreat.jpg",
+        "image": "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/private_island_retreat"
     },
     {
@@ -47,7 +47,7 @@
             "Home theater",
             "Gym"
         ],
-        "image": "oceanfront_mansion.jpg",
+        "image": "https://images.unsplash.com/photo-1506345932350-caeeec3d8895?q=80&w=1586&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/oceanfront_mansion"
     },
     {
@@ -64,7 +64,7 @@
             "Concierge service",
             "Fitness center"
         ],
-        "image": "penthouse.jpg",
+        "image": "https://images.unsplash.com/photo-1660673507748-6b66c15cb96d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/penthouse"
     },
     {
@@ -81,7 +81,7 @@
             "Spa",
             "Tennis courts"
         ],
-        "image": "seaside_resort.jpg",
+        "image": "https://plus.unsplash.com/premium_photo-1676517030737-5ac484676ea7?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/seaside_resort"
     },
     {
@@ -98,7 +98,7 @@
             "Outdoor hot tub",
             "Home automation system"
         ],
-        "image": "mountain_retreat.jpg",
+        "image": "https://images.unsplash.com/photo-1478059299873-f047d8c5fe1a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/mountain_retreat"
     },
     {
@@ -115,7 +115,7 @@
             "Outdoor kitchen",
             "Guest house"
         ],
-        "image": "vineyard_estate.jpg",
+        "image": "https://images.unsplash.com/photo-1561443883-b04d019d7675?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/vineyard_estate"
     },
     {
@@ -132,7 +132,7 @@
             "Private chef",
             "Media room"
         ],
-        "image": "ski_chalet.jpg",
+        "image": "https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/ski_chalet"
     },
     {
@@ -149,7 +149,7 @@
             "Chapel",
             "Helipad"
         ],
-        "image": "historic_castle.jpg",
+        "image": "https://images.unsplash.com/photo-1485465053475-dd55ed3894b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "view_property_url": "https://example.com/historic_castle"
     }
 ]
