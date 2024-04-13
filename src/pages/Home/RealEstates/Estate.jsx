@@ -1,9 +1,10 @@
 import { BiDollarCircle } from "react-icons/bi";
 import { FaRegMap } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Estate = ({ estate }) => {
 
-    const { estate_title, segment_name, description, price, status, area, location, facilities, image, view_property_url } = estate;
+    const { id, estate_title, segment_name, description, price, status, area, location, facilities, image, view_property_url } = estate;
 
     return (
         <div className="border-2 border-gray-300 rounded-xl">
@@ -32,7 +33,7 @@ const Estate = ({ estate }) => {
                 </div>
 
                 <div>
-                <a className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none">View Property</a>
+                    <NavLink to={`/estate/${id}`} className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none">View Property</NavLink>
                 </div>
             </div>
         </div>
