@@ -19,7 +19,7 @@ const Estates = () => {
 
             <div className="px-32 pb-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {
-                    estates.map(estate => <Estate key={estate.Id} estate={estate} />)
+                    estates.map(estate => <Estate key={estate.id} estate={estate} />)
                 }
             </div>
         </div>

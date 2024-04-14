@@ -6,9 +6,12 @@ import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const CreateAccount = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
+    const { createUser } = useContext(AuthContext);
 
     const onSubmit = data => {
         const { password, confirmPassword } = data;
@@ -41,9 +44,20 @@ const CreateAccount = () => {
         console.log(formData);
         const firstName = formData.firstName;
         const lastName = formData.lastName;
+        const fullName = firstName + ' ' + lastName;
         const email = formData.email;
         const PhotoUrl = formData.PhotoUrl;
-        console.log(firstName, lastName, email, PhotoUrl);
+        console.log(fullName, lastName, email, PhotoUrl);
+
+        createUser(email, password)
+        .then(res =>{
+            console.log(res.user);
+            res.user.PhotoURL = PhotoUrl;
+            res.user.displayName = fullName;
+        })
+        .catch(error =>{
+            console.error(error);
+        })
 
         toast.success("Account created successfully");
         reset();

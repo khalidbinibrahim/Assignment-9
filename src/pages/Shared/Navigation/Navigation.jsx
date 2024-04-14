@@ -5,11 +5,11 @@ import { IoSearchOutline } from "react-icons/io5";
 const Navigation = () => {
 
     const navLinks = <>
-        <NavLink to="/" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Home</NavLink>
-        <NavLink to="/news" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">News</NavLink>
-        <NavLink to="/destination" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Destination</NavLink>
-        <NavLink to="/blog" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Blog</NavLink>
-        <NavLink to="/contact" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-medium rounded-lg py-2 px-3">Contact</NavLink>
+        <NavLink to="/" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">Home</NavLink>
+        <NavLink to="/news" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">News</NavLink>
+        <NavLink to="/destination" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">Destination</NavLink>
+        <NavLink to="/blog" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">Blog</NavLink>
+        <NavLink to="/contact" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">Contact</NavLink>
     </>
 
     return (
