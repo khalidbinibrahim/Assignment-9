@@ -4,12 +4,21 @@ import { NavLink } from 'react-router-dom';
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const { register, handleSubmit, getValues, reset } = useForm();
+    const { signInUser } = useContext(AuthContext);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    const onSubmit = data => {
+        console.log(data);
+    }
+
+    const handleSignIn = () =>{
+        const formData = getValues();
+        console.log(formData)
+    }
 
     return (
         <div>
@@ -36,7 +45,7 @@ const Login = () => {
                     </div>
 
                     <div className='my-4'>
-                        <a className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none">Login</a>
+                        <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleSignIn}>Create an account</button>
                     </div>
                 </form>
                 <p className='text-black font-bold text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Create an account</NavLink></p>
