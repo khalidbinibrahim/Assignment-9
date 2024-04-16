@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 
 const Login = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
-    const { signInUser, gitHubLogin, googleLogin } = useContext(AuthContext);
+    const { loginUser, gitHubLogin, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const Login = () => {
         const email = formData.Email;
         const password = formData.Password;
         console.log(email, password)
-        signInUser(email, password)
+        loginUser(email, password)
             .then(res => {
                 console.log(res.user);
                 toast.success("Logged in user successfully");

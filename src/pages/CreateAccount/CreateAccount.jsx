@@ -52,7 +52,7 @@ const CreateAccount = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
-                res.user.PhotoURL = PhotoUrl;
+                res.user.photoURL = PhotoUrl;
                 res.user.displayName = fullName;
                 toast.success("Account created successfully");
                 reset();
