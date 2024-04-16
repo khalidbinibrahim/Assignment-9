@@ -9,6 +9,8 @@ import Destination from "../pages/Destination/Destination";
 import Blog from "../pages/Blog/Blog";
 import Contact from "../pages/Contact/Contact";
 import EstateDetails from "../pages/Home/RealEstates/EstateDetails";
+import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -53,7 +55,12 @@ const router = createBrowserRouter([
 
             {
                 path: '/estate/:id',
-                element: <EstateDetails />
+                element: <PrivateRoute><EstateDetails /></PrivateRoute>
+            },
+
+            {
+                path: '/update_profile',
+                element: <UpdateProfile />
             }
         ]
     }    

@@ -33,7 +33,7 @@ const Navigation = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div className="flex gap-2 items-center mr-8 text-3xl">
+                <div className="flex gap-2 items-center mr-6 text-3xl">
                     <RiVipCrownLine />
                     <a className="font-bold text-[#131313]">Luxury</a>
                 </div>
@@ -47,7 +47,7 @@ const Navigation = () => {
                     <input type="text" id="voice-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search your Destination..." />
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex mr-4 ml-8">
+            <div className="navbar-center hidden lg:flex mr-4 ml-4">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
                 </ul>
@@ -55,10 +55,10 @@ const Navigation = () => {
             <div className="">
                 {
                     user ?
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 items-center">
                             <button onClick={handleLogOut} className="btn bg-[#FBB804] text-black font-bold px-7">Log Out</button>
                             <div className="">
-                                <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="w-24 rounded-full" />
+                                <NavLink to="/update_profile" alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="w-24 rounded-full"></NavLink>
                             </div>
                         </div> :
                         <NavLink to="/login" className="btn bg-[#FBB804] text-black font-bold px-7">Login</NavLink>
