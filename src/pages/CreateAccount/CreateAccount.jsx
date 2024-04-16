@@ -128,7 +128,7 @@ const CreateAccount = () => {
                         <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleCreateAccount}>Create an account</button>
                     </div>
                 </form>
-                <p className='text-black font-bold text-center'>Already have an account? <NavLink to="/login" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Login</NavLink></p>
+                <p className='text-black font-bold text-center'>Already have an account? <NavLink to="/login" className="text-[#FBB804] hover:border-b hover:border-[#FBB804] font-semibold">Login</NavLink></p>
             </div>
 
             <div className='mb-6 font-montserrat'>

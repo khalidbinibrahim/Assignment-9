@@ -57,9 +57,9 @@ const Navigation = () => {
                     user ?
                         <div className="flex gap-2 items-center">
                             <button onClick={handleLogOut} className="btn bg-[#FBB804] text-black font-bold px-7">Log Out</button>
-                            <div className="">
-                                <NavLink to="/update_profile" alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="w-24 rounded-full"></NavLink>
-                            </div>
+                            <NavLink to="/update_profile">
+                                <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className="w-24 rounded-full" />
+                            </NavLink>
                         </div> :
                         <NavLink to="/login" className="btn bg-[#FBB804] text-black font-bold px-7">Login</NavLink>
                 }

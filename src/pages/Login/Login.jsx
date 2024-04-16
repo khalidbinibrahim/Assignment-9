@@ -82,14 +82,14 @@ const Login = () => {
                             <input type="checkbox" placeholder="Remember Me" {...register} />
                             <p className='text-black font-bold'>Remember Me</p>
                         </div>
-                        <a className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Forgot Password</a>
+                        <a className="text-[#FBB804] hover:border-b hover:border-[#FBB804] font-semibold">Forgot Password</a>
                     </div>
 
                     <div className='my-4'>
                         <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleSignIn}>Login</button>
                     </div>
                 </form>
-                <p className='text-black font-bold text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Create an account</NavLink></p>
+                <p className='text-black font-bold text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] hover:border-b hover:border-[#FBB804] font-semibold">Create an account</NavLink></p>
             </div>
 
             <div className='mb-6 font-montserrat'>
