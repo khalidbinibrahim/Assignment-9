@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { RiVipCrownLine } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navigation = () => {
+    const { user } = useContext(AuthContext);
 
     const navLinks = <>
         <NavLink to="/" className="mr-3 font-bold text-[#0d0d0dcc] hover:bg-base-300 focus:border-b-2 focus:border-[#F9A51A] focus:text-[#F9A51A] focus:font-semibold rounded-lg py-2 px-3">Home</NavLink>

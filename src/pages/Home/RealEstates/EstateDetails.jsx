@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BiDollarCircle } from "react-icons/bi";
 import { FaRegMap } from "react-icons/fa6";
+import { IoLocationOutline } from "react-icons/io5";
 
 const EstateDetails = () => {
     const { id } = useParams();
@@ -16,7 +17,6 @@ const EstateDetails = () => {
             });
     }, [id]);
 
-    // Add a conditional check before destructuring estate properties
     if (!estate) {
         return <div>Loading...</div>;
     }
@@ -25,7 +25,7 @@ const EstateDetails = () => {
 
     return (
         <div>
-            <div className="px-32">
+            <div className="px-32 my-10">
                 <div className="flex gap-10 justify-center p-6">
                     <div className="p-8 bg-[#1313130D] rounded-2xl">
                         <img src={image} alt="" />
@@ -56,9 +56,10 @@ const EstateDetails = () => {
                         </div>
                         <hr />
                         <div className="font-poppins">
-                            <div className="flex gap-3">
-                                <p className="text-[#282828CC] font-normal flex items-center gap-1"><BiDollarCircle className="text-xl" /> {price}</p>
-                                <p className="text-[#282828CC] font-normal flex items-center gap-2"><FaRegMap className="text-xl" /> {area}</p>
+                            <div>
+                                <p className="text-[#282828CC] font-normal flex items-center gap-2 mb-1"><BiDollarCircle className="text-xl" /><i className="font-montserrat font-medium">Price:</i> {price}</p>
+                                <p className="text-[#282828CC] font-normal flex items-center gap-2 mb-1"><FaRegMap className="text-xl" /><i className="font-montserrat font-medium">Area:</i> {area}</p>
+                                <p className="text-[#282828CC] font-normal flex items-center gap-2"><IoLocationOutline className="text-xl" /><i className="font-montserrat font-medium">Location:</i> {location}</p>
                             </div>
                         </div>
                     </div>

@@ -1,23 +1,64 @@
 import TextField from '@mui/material/TextField';
 import { useForm } from "react-hook-form";
-import { NavLink } from 'react-router-dom';
-import { FaFacebook } from "react-icons/fa";
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, gitHubLogin, googleLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data);
     }
 
-    const handleSignIn = () =>{
+    const handleSignIn = () => {
         const formData = getValues();
-        console.log(formData)
+        console.log(formData);
+        const email = formData.Email;
+        const password = formData.Password;
+        console.log(email, password)
+        signInUser(email, password)
+            .then(res => {
+                console.log(res.user);
+                toast.success("Logged in user successfully");
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error("Error logging in user. Please try again.");
+            })
+        reset();
+    }
+
+    const handleGithubLogin = () => {
+        gitHubLogin()
+            .then(res =>{
+                console.log(res.user);
+                toast.success("Logged in with GitHub successfully");
+            })
+            .catch(error =>{
+                console.error(error);
+                toast.error("Error logging in with GitHub. Please try again.");
+            });
+    }
+    
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(res => {
+                console.log(res.user);
+                toast.success("Logged in with Google successfully");
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error("Error logging in with Google. Please try again.");
+            });
     }
 
     return (
@@ -45,7 +86,7 @@ const Login = () => {
                     </div>
 
                     <div className='my-4'>
-                        <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleSignIn}>Create an account</button>
+                        <button type="submit" className="btn w-full bg-[#FBB804] font-montserrat text-black font-bold px-7 text-center rounded-md border-none" onClick={handleSignIn}>Login</button>
                     </div>
                 </form>
                 <p className='text-black font-bold text-center'>Do not have an account? <NavLink to="/create_account" className="text-[#FBB804] border-b border-[#FBB804] font-semibold">Create an account</NavLink></p>
@@ -56,8 +97,8 @@ const Login = () => {
             </div>
 
             <div className='flex flex-col items-center justify-center gap-4 font-montserrat'>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
+                <a onClick={handleGithubLogin} className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaGithub className='text-2xl' /> Continue with Github</a>
+                <a onClick={handleGoogleLogin} className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Google</a>
             </div>
         </div>
     );

@@ -1,17 +1,17 @@
 import TextField from '@mui/material/TextField';
 import { useForm } from "react-hook-form";
 import { NavLink } from 'react-router-dom';
-import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FaGithub } from 'react-icons/fa';
 
 const CreateAccount = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, gitHubLogin, googleLogin } = useContext(AuthContext);
 
     const onSubmit = data => {
         const { password, confirmPassword } = data;
@@ -35,12 +35,12 @@ const CreateAccount = () => {
             toast.error("Password and Confirm Password do not match");
             return;
         }
-
+    
         if (!checkPasswordCriteria(password)) {
             toast.error("Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long");
             return;
         }
-
+    
         console.log(formData);
         const firstName = formData.firstName;
         const lastName = formData.lastName;
@@ -48,24 +48,49 @@ const CreateAccount = () => {
         const email = formData.email;
         const PhotoUrl = formData.PhotoUrl;
         console.log(fullName, lastName, email, PhotoUrl);
-
+    
         createUser(email, password)
-        .then(res =>{
-            console.log(res.user);
-            res.user.PhotoURL = PhotoUrl;
-            res.user.displayName = fullName;
-        })
-        .catch(error =>{
-            console.error(error);
-        })
-
-        toast.success("Account created successfully");
-        reset();
+            .then(res => {
+                console.log(res.user);
+                res.user.PhotoURL = PhotoUrl;
+                res.user.displayName = fullName;
+                toast.success("Account created successfully");
+                reset();
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error("Error creating account. Please try again.");
+            });
     };
+    
 
     const checkPasswordCriteria = password => {
         return /[A-Z]/.test(password) && /[a-z]/.test(password) && password.length >= 6;
     };
+
+    const handleGithubLogin = () => {
+        gitHubLogin()
+            .then(res =>{
+                console.log(res.user);
+                toast.success("Logged in with GitHub successfully");
+            })
+            .catch(error =>{
+                console.error(error);
+                toast.error("Error logging in with GitHub. Please try again.");
+            });
+    }
+    
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(res => {
+                console.log(res.user);
+                toast.success("Logged in with Google successfully");
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error("Error logging in with Google. Please try again.");
+            });
+    }
 
     return (
         <div>
@@ -111,8 +136,8 @@ const CreateAccount = () => {
             </div>
 
             <div className='flex flex-col items-center justify-center gap-4 font-montserrat'>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaFacebook className='text-blue-700 text-2xl' /> Continue with Facebook</a>
-                <a className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Facebook</a>
+                <a onClick={handleGithubLogin} className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FaGithub className='text-2xl' /> Continue with Github</a>
+                <a onClick={handleGoogleLogin} className="btn btn-outline text-black bg-white rounded-3xl border-gray-400 px-10 py-auto font-bold w-[460px]"><FcGoogle className='text-2xl' /> Continue with Google</a>
             </div>
         </div>
     );
