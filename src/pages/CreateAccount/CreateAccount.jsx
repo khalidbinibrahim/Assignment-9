@@ -1,6 +1,6 @@
 import TextField from '@mui/material/TextField';
 import { useForm } from "react-hook-form";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,6 +12,8 @@ import { FaGithub } from 'react-icons/fa';
 const CreateAccount = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
     const { createUser, gitHubLogin, googleLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         const { password, confirmPassword } = data;
@@ -55,6 +57,7 @@ const CreateAccount = () => {
                 res.user.photoURL = PhotoUrl;
                 res.user.displayName = fullName;
                 toast.success("Account created successfully");
+                navigate(location?.state ? location.state : '/');
                 reset();
             })
             .catch(error => {
@@ -93,7 +96,7 @@ const CreateAccount = () => {
     }
 
     return (
-        <div>
+        <div className='mb-10'>
             <ToastContainer />
             <Helmet>
                 <title>Luxury | Create Account</title>
@@ -112,7 +115,7 @@ const CreateAccount = () => {
                     <div className='mb-4'>
                         <TextField id="standard-basic" label="Photo Url" variant="standard" className='w-full' type="url" {...register("PhotoUrl", { required: true })} />
                     </div>
-                    
+
                     <div className='mb-4'>
                         <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("email", { required: true })} />
                     </div>

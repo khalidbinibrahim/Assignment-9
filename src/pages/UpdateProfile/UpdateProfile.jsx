@@ -1,26 +1,37 @@
 import { TextField } from "@mui/material";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
-    const { register, handleSubmit, getValues, reset } = useForm();
-    const onSubmit = data => {
-        console.log(data)
-    }
+    const { updateUserProfile } = useContext(AuthContext);
+    const { register, getValues, reset } = useForm();
 
     const handleUpdateProfile = () =>{
         const formData = getValues();
         console.log(formData)
 
-        const fullName = formData.lastName;
+        const fullName = formData.fullName;
         const photoUrl = formData.PhotoUrl;
+
+        updateUserProfile(fullName, photoUrl)
+        .then(res =>{
+            console.log(res);
+            reset();
+            toast.success('User profile Updated');
+        })
+        .catch(error =>{
+            console.error(error);
+        })
     }
 
     return (
         <div className='mx-8 lg:mx-96 my-10 px-14 py-8 border rounded-md border-gray-400 font-montserrat'>
             <h1 className='mb-6 font-bold text-black text-2xl'>Update Profile</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleUpdateProfile}>
                 <div className='mb-4'>
-                    <TextField id="standard-basic" label="Full Name" variant="standard" className='w-full' type="text" {...register("lastName", { required: true })} />
+                    <TextField id="standard-basic" label="Full Name" variant="standard" className='w-full' type="text" {...register("fullName", { required: true })} />
                 </div>
 
                 <div className='mb-4'>

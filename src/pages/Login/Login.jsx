@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className='mb-10'>
             <Helmet>
                 <title>Luxury | Login</title>
             </Helmet>

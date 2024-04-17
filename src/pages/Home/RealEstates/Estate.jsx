@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Estate = ({ estate }) => {
 
-    const { id, estate_title, segment_name, description, price, status, area, location, facilities, image, view_property_url } = estate;
+    const { id, estate_title, description, price, area, facilities, image } = estate;
 
     return (
         <div className="border-2 border-gray-300 rounded-xl">
