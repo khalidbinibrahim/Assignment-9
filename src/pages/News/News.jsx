@@ -8,7 +8,7 @@ const News = () => {
             </Helmet>
             <div className="mb-24">
                 <h2 className="font_playfair text-center text-[#131313] font-bold text-4xl mb-4">News</h2>
-                <p className="font-poppins font-normal text-[#878787] text-center">Real estate is defined as the land and any permanent structures, like a home, or <br /> improvements attached to the land, whether natural or man-made.</p>
+                <p className="font-poppins font-normal text-[#878787] text-center">News is information about current events. This may be provided through many different <br /> media: word of mouth, printing, postal systems, broadcasting, electronic communication, or through the testimony of observers and witnesses to events. </p>
             </div>
         </div>
     );

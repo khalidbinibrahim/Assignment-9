@@ -4,16 +4,24 @@ import { Autoplay, Parallax, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/bundle';
+import { useEffect } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Header = () => {
+
+    useEffect(() =>{
+        Aos.init({duration: 1000});
+    }, [])
+
     return (
         <div>
             <div className="bg-[url('https://saterdesign.com/cdn/shop/articles/y184DIXjxsSf2uv8uUODDQ0EslbkfRc41661192200_894x.jpg?v=1663357268')] bg-no-repeat bg-cover px-32 py-12 mb-12">
                 <div className="flex justify-between items-center">
                     <div>
-                        <h1 className="font-bebasNeue mb-5 text-6xl font-medium text-white">LUXURY ESTATE</h1>
-                        <p className="font-montserrat text-white font-medium mb-6">Welcome to our Luxury Real Estate, your gateway to luxury living. Discover <br /> exclusive properties that redefine opulence and sophistication. Explore our curated <br /> selection of estates, villas, and penthouses in the world most prestigious <br /> destinations. Find your dream home with us today.</p>
-                        <a className="btn font-montserrat bg-[#FBB804] text-black font-bold px-7 text-center border-none">Booking <i className="text-lg"><FaArrowRightLong /></i></a>
+                        <h1 className="font-bebasNeue mb-5 text-6xl font-medium text-white" data-aos="fade-right">LUXURY ESTATE</h1>
+                        <p className="font-montserrat text-white font-medium mb-6" data-aos="fade-right">Welcome to our Luxury Real Estate, your gateway to luxury living. Discover <br /> exclusive properties that redefine opulence and sophistication. Explore our curated <br /> selection of estates, villas, and penthouses in the world most prestigious <br /> destinations. Find your dream home with us today.</p>
+                        <a className="btn font-montserrat bg-[#FBB804] text-black font-bold px-7 text-center border-none" data-aos="fade-right">Booking <i className="text-lg"><FaArrowRightLong /></i></a>
                     </div>
 
                     <div className="w-[270px]">

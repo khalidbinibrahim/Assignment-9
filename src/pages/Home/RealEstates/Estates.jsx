@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Estate from "../RealEstates/Estate"
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Estates = () => {
     const [estates, setEstates] = useState([]);
@@ -10,8 +12,12 @@ const Estates = () => {
             .then(data => setEstates(data));
     }, []);
 
+    useEffect(() =>{
+        Aos.init({duration: 1000});
+    }, [])
+
     return (
-        <div>
+        <div data-aos="fade-down">
             <div className="mb-12">
                 <h2 className="font_playfair text-center text-[#131313] font-bold text-4xl mb-4">Estate Section</h2>
                 <p className="font-poppins font-normal text-[#878787] text-center">Real estate is defined as the land and any permanent structures, like a home, or <br /> improvements attached to the land, whether natural or man-made.</p>
