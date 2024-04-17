@@ -4,18 +4,26 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import { IoMdEye } from "react-icons/io";
+import { PiEyeClosedBold } from "react-icons/pi";
 
 const Login = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
     const { loginUser, gitHubLogin, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+
 
     const onSubmit = data => {
         console.log(data);
+    }
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     }
 
     const handleSignIn = () => {
@@ -39,16 +47,16 @@ const Login = () => {
 
     const handleGithubLogin = () => {
         gitHubLogin()
-            .then(res =>{
+            .then(res => {
                 console.log(res.user);
                 toast.success("Logged in with GitHub successfully");
             })
-            .catch(error =>{
+            .catch(error => {
                 console.error(error);
                 toast.error("Error logging in with GitHub. Please try again.");
             });
     }
-    
+
     const handleGoogleLogin = () => {
         googleLogin()
             .then(res => {
@@ -73,8 +81,9 @@ const Login = () => {
                         <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("Email", { required: true })} />
                     </div>
 
-                    <div className='mb-6'>
-                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type="password" {...register("Password", { required: true, pattern: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/i })} />
+                    <div className='mb-6 flex items-center'>
+                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type={showPassword ? "text" : "password"} {...register("Password", { required: true })} />
+                        <span onClick={togglePasswordVisibility} className='relative right-8 text-xl'>{showPassword ? <PiEyeClosedBold /> : <IoMdEye />}</span>
                     </div>
 
                     <div className='flex justify-between my-6'>

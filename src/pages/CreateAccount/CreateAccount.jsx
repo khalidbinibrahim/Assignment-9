@@ -5,15 +5,19 @@ import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGithub } from 'react-icons/fa';
+import { IoMdEye } from "react-icons/io";
+import { PiEyeClosedBold } from "react-icons/pi";
 
 const CreateAccount = () => {
     const { register, handleSubmit, getValues, reset } = useForm();
     const { createUser, gitHubLogin, googleLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const onSubmit = data => {
         const { password, confirmPassword } = data;
@@ -30,6 +34,13 @@ const CreateAccount = () => {
         toast.success("Password verified successfully");
     };
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    }
+
     const handleCreateAccount = () => {
         const formData = getValues();
         const { password, confirmPassword } = formData;
@@ -37,12 +48,12 @@ const CreateAccount = () => {
             toast.error("Password and Confirm Password do not match");
             return;
         }
-    
+
         if (!checkPasswordCriteria(password)) {
             toast.error("Password must have at least one uppercase letter, one lowercase letter, and be at least 6 characters long");
             return;
         }
-    
+
         console.log(formData);
         const firstName = formData.firstName;
         const lastName = formData.lastName;
@@ -50,7 +61,7 @@ const CreateAccount = () => {
         const email = formData.email;
         const PhotoUrl = formData.PhotoUrl;
         console.log(fullName, lastName, email, PhotoUrl);
-    
+
         createUser(email, password)
             .then(res => {
                 console.log(res.user);
@@ -65,7 +76,7 @@ const CreateAccount = () => {
                 toast.error("Error creating account. Please try again.");
             });
     };
-    
+
 
     const checkPasswordCriteria = password => {
         return /[A-Z]/.test(password) && /[a-z]/.test(password) && password.length >= 6;
@@ -73,16 +84,16 @@ const CreateAccount = () => {
 
     const handleGithubLogin = () => {
         gitHubLogin()
-            .then(res =>{
+            .then(res => {
                 console.log(res.user);
                 toast.success("Logged in with GitHub successfully");
             })
-            .catch(error =>{
+            .catch(error => {
                 console.error(error);
                 toast.error("Error logging in with GitHub. Please try again.");
             });
     }
-    
+
     const handleGoogleLogin = () => {
         googleLogin()
             .then(res => {
@@ -120,12 +131,14 @@ const CreateAccount = () => {
                         <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("email", { required: true })} />
                     </div>
 
-                    <div className='mb-4'>
-                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type="password" {...register("password", { required: true })} />
+                    <div className='mb-4 flex items-center'>
+                        <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type={showPassword ? "text" : "password"} {...register("Password", { required: true })} />
+                        <span onClick={togglePasswordVisibility} className='relative right-8 text-xl'>{showPassword ? <PiEyeClosedBold /> : <IoMdEye />}</span>
                     </div>
 
-                    <div className='mb-6'>
-                        <TextField id="standard-basic" label="Confirm Password" variant="standard" className='w-full' type="password" {...register("confirmPassword", { required: true })} />
+                    <div className='mb-4 flex items-center'>
+                        <TextField id="standard-basic" label="Confirm Password" variant="standard" className='w-full' type={showConfirmPassword ? "text" : "password"} {...register("Password", { required: true })} />
+                        <span onClick={toggleConfirmPasswordVisibility} className='relative right-8 text-xl'>{showConfirmPassword ? <PiEyeClosedBold /> : <IoMdEye />}</span>
                     </div>
 
                     <div className='my-4'>
