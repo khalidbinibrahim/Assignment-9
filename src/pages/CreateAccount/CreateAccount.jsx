@@ -112,6 +112,7 @@ const CreateAccount = () => {
                     <div className='mb-4'>
                         <TextField id="standard-basic" label="Photo Url" variant="standard" className='w-full' type="url" {...register("PhotoUrl", { required: true })} />
                     </div>
+                    
                     <div className='mb-4'>
                         <TextField id="standard-basic" label="Email" variant="standard" className='w-full' type="email" {...register("email", { required: true })} />
                     </div>
