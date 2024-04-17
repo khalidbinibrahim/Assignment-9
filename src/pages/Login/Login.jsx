@@ -83,7 +83,7 @@ const Login = () => {
 
                     <div className='mb-6 flex items-center'>
                         <TextField id="standard-basic" label="Password" variant="standard" className='w-full' type={showPassword ? "text" : "password"} {...register("Password", { required: true })} />
-                        <span onClick={togglePasswordVisibility} className='relative right-8 text-xl'>{showPassword ? <PiEyeClosedBold /> : <IoMdEye />}</span>
+                        <span onClick={togglePasswordVisibility} className='relative right-8 text-xl'>{showPassword ? <IoMdEye /> : <PiEyeClosedBold />}</span>
                     </div>
 
                     <div className='flex justify-between my-6'>
