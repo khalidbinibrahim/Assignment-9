@@ -15,7 +15,7 @@ Live site Link: https://khalid-bin-ibrahim-a9.firebaseapp.com/
 ==========----------==========
 
 
-I have uploaded all the Napim packages on my website -
+I have uploaded all the Npm packages on my website -
 1. AOS Package
 2. React Hook Form
 3. Swiper Slider
